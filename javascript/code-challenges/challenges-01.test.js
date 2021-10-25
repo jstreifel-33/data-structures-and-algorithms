@@ -11,7 +11,7 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 const addOne = (arr) => {
   const outputArr = [];
 
-  arr.forEach(num => { outputArr.push(num + 1); } );
+  arr.forEach(num => outputArr.push(num + 1));
 
   return outputArr;
 };
@@ -27,7 +27,7 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 const addExclamation = (arr) => {
   const outputArr = [];
 
-  arr.forEach(str => { outputArr.push(str + '!'); } );
+  arr.forEach(str => outputArr.push(str + '!'));
 
   return outputArr;
 };
@@ -43,7 +43,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 const allUpperCase = (arr) => {
   const outputArr = [];
 
-  arr.forEach(str => { outputArr.push( str.toUpperCase() ); } );
+  arr.forEach(str => outputArr.push( str.toUpperCase() ));
 
   return outputArr;
 };
@@ -59,11 +59,15 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  // Solution code here...
+  return word.toUpperCase() + '!';
 };
 
 const speaker = (words, callback) => {
-  // Solution code here...
+  const outputArr = [];
+
+  words.forEach(str => outputArr.push( callback(str) ));
+
+  return outputArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,7 +163,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should provide an array of strings, that get uppercased, and a "!" at the end', () => {
     expect(speaker(['hello', '301', 'students'], greeting)).toStrictEqual(['HELLO!', '301!', 'STUDENTS!']);
   });
