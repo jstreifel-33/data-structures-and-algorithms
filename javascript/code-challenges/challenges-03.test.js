@@ -61,7 +61,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter(val => !forbiddenValues.includes(val));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -228,7 +228,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   const firstNums = [1, 2, 3];
   const secondNums = [1, 2, 3, 4];
 
