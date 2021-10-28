@@ -165,7 +165,13 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  const mapped = arr.map((person, i) => {
+    return {i, val: person.lastName};
+  });
+
+  mapped.sort((a, b) => a.val > b.val ? 1 : a.val < b.val ? -1 : 0);
+
+  return mapped.map(val => arr[val.i]);
 };
 
 /* ------------------------------------------------------------------------------------------------
