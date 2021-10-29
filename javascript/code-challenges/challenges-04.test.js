@@ -188,7 +188,7 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   const mapped = arr.map((person, i) => {
-    return {...person, i}
+    return {...person, i};
   })
 
   console.log(mapped);
