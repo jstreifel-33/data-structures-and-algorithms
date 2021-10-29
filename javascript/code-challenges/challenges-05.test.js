@@ -1,5 +1,7 @@
 'use strict';
 
+const { children } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -181,7 +183,7 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  return arr.reduce((acc, val) => val.children ? acc + val.children.length : acc + 0, 0);
+  return arr.reduce((acc, val) => val.children ? acc + val.children.length : acc, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -220,7 +222,7 @@ const isPrime = (value) => {
 
 const countPrimeNumbers = (arr) => {
   let result = arr.reduce((acc, val) => {
-    return isPrime(val) ? acc + 1 : acc + 0;
+    return isPrime(val) ? acc + 1 : acc;
   }, 0);
   return result;
 };
@@ -282,7 +284,15 @@ Write a function named extractChildren that, given the array of characters from 
 ------------------------------------------------------------------------------------------------ */
 
 const extractChildren = (arr) => {
-  // Solution code here...
+  //filter for parents with 'a' in name
+  let aParents = arr.filter((val) => val.name.includes('a'));
+
+  //reduce children to single array
+  let children = aParents.reduce((acc, val) => {
+    return val.children ? acc.concat(val.children) : acc;
+  },[]);
+
+  return children;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -363,7 +373,7 @@ describe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return an array containing the names of the children', () => {
     expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
     expect(extractChildren(characters).length).toStrictEqual(10);
