@@ -1,5 +1,7 @@
 'use strict';
 
+const { attr } = require("cheerio/lib/api/attributes");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -231,7 +233,35 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  const mapped = arr.map((meeting, i) => {
+    let sortable = {};
+
+    switch (meeting.dayOfWeek){
+      case "Monday":
+        sortable = {i, val:1};
+        break;
+      case "Tuesday":
+        sortable = {i, val:2};
+        break;
+      case "Wednesday":
+        sortable = {i, val:3};
+        break;
+      case "Thursday":
+        sortable = {i, val:4};
+        break;
+      case "Friday":
+        sortable = {i, val:5};
+        break;
+      default:
+        sortable = {i, val:6};
+    };
+
+    return sortable;
+  });
+
+  mapped.sort((a, b) => a.val - b.val);
+
+  return mapped.map(a => arr[a.i]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -379,7 +409,7 @@ describe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should sort meetings by the day on which they happen', () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0,2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
