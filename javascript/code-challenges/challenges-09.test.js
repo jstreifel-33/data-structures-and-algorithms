@@ -133,7 +133,15 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  return arr.reduce((result, char) => char.name === character && Object.keys(char).includes('children') ? result = true : result, false);
+  let hasChildren = false;
+  arr.forEach((char) => {
+    if (char.name === character){
+      if (Object.values(char).length > 3){
+        hasChildren = true;
+      }
+    }
+  });
+  return hasChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -264,7 +272,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
