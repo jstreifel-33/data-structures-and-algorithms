@@ -66,7 +66,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-  // Solution code here...
+  let regex = /^[a-z0-9]+(\.[a-z0-9]+)?@\w+(\.com|\.net|\.org)$/gi;
+  return regex.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -161,7 +162,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should match a basic email', () => {
     expect(validateEmail('joe@codefellows.com')).toBeTruthy();
   });
