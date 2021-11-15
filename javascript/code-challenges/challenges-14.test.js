@@ -124,11 +124,11 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   return arr.sort((a, b) => {
-    if (a[property] > b[property]){
+    if (a[property] > b[property]) {
       return 1;
-    }else if (a[property] < b[property]){
+    } else if (a[property] < b[property]) {
       return -1;
-    }else{
+    } else {
       return 0;
     }
   });
@@ -171,7 +171,25 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  let winningCoords = [
+    [0, 0, 0, 1, 0, 2], //first row
+    [1, 0, 1, 1, 1, 2], //second row
+    [2, 0, 2, 1, 2, 2], //third row
+    [0, 0, 1, 0, 2, 0], //first column
+    [0, 1, 1, 1, 2, 1], //second column
+    [0, 2, 1, 2, 2, 2], //third column
+    [0, 0, 1, 1, 2, 2], //first diag
+    [0, 2, 1, 1, 2, 0] //second diag
+  ];
+  let win = [false];
+  winningCoords.forEach(coord => {
+    if (board[coord[0]][coord[1]].charAt(0) &&
+      board[coord[0]][coord[1]] === board[coord[2]][coord[3]] &&
+      board[coord[2]][coord[3]] === board[coord[4]][coord[5]]) {
+      win[0] = true;
+    }
+  });
+  return win[0];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -246,7 +264,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return true if there are three in a row', () => {
     expect(detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(true);
     expect(detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
