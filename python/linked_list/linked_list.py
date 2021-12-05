@@ -8,7 +8,7 @@ class Node:
 
 class LinkedList:
     """
-    Initialized a singly linked list object, composed of nodes.
+    Initializes a singly linked list object, composed of nodes.
     inlcudes 'insert', 'includes' and 'to_string' methods
     """
 
@@ -16,4 +16,18 @@ class LinkedList:
         self.head = None
 
     def insert(self, value):
+        """
+        Create and insert a new node into a linked list.
+        Newly created node is assigned as new head of list.
+        """
         self.head = Node(value, self.head)
+
+    def includes(self, value):
+        check_node = self.head
+        while check_node is not None:
+            if check_node.value == value:
+                return True
+
+            check_node = check_node.next
+
+        return False
