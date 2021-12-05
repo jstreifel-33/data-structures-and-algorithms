@@ -79,12 +79,12 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 
 ### Linked List Implementation Checklist
 
-- [ ] Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
-- [ ] Create a Linked List class
-- [ ] Within your Linked List class, include a head property.
-  - [ ] Upon instantiation, an empty Linked List should be created.
+- [x] Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
+- [x] Create a Linked List class
+- [x] Within your Linked List class, include a head property.
+  - [x] Upon instantiation, an empty Linked List should be created.
 - The class should contain the following methods
-  - [ ] insert
+  - [x] insert
     - Arguments: value
     - Returns: nothing
     - Adds a new node with that value to the head of the list with an O(1) Time performance.
