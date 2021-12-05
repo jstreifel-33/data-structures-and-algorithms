@@ -14,12 +14,18 @@ def test_node_instantiation():
 def test_linked_list_instantiation():
     breakfast = Node('spam')
     meals = LinkedList()
-    LinkedList.head = breakfast
+    meals.head = breakfast
     assert meals.head.value == 'spam'
 
 
-def test_linked_list_instantiation():
+def test_linked_list_insert():
     meals = LinkedList()
     meals.insert('sandwich')
     assert meals.head.value == 'sandwich'
 
+# def test_linked_list_includes():
+#     meals = LinkedList()
+#     meals.insert('spam')
+#     meals.insert('sandwich')
+#     assert meals.includes('spam') is True
+#     assert meals.includes('kale') is False
