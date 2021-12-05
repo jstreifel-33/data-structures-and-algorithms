@@ -8,9 +8,8 @@ class LinkedList:
     Put docstring here
     """
 
-    def __init__(self):
-        self.head = None
+    def __init__(self, head=None):
+        self.head = head
 
     def insert(self, value):
-        new_node = Node(value, self.head)
-        self.head = new_node
+        self.head = Node(value, self.head)
