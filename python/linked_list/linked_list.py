@@ -23,6 +23,10 @@ class LinkedList:
         self.head = Node(value, self.head)
 
     def includes(self, value):
+        """
+        Checks contents of linked list for
+        provided value. Return True or False
+        """
         check_node = self.head
         while check_node is not None:
             if check_node.value == value:
@@ -33,6 +37,10 @@ class LinkedList:
         return False
 
     def to_string(self):
+        """
+        Returns string representation of
+        linked list.
+        """
         as_string = ""
         check_node = self.head
         while check_node is not None:
