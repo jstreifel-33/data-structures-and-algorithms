@@ -23,6 +23,7 @@ def test_linked_list_insert():
     meals.insert('sandwich')
     assert meals.head.value == 'sandwich'
 
+
 def test_linked_list_includes():
     meals = LinkedList()
     meals.insert('spam')
@@ -30,3 +31,12 @@ def test_linked_list_includes():
     assert meals.includes('sandwich') is True
     assert meals.includes('spam') is True
     assert meals.includes('kale') is False
+
+
+def test_linked_list_includes():
+    meals = LinkedList()
+    meals.insert('sandwich')
+    meals.insert('spam')
+    actual = meals.to_string()
+    expected = "{ spam } -> { sandwich } -> None"
+    assert actual == expected

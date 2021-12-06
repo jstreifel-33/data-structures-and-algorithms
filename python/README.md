@@ -88,7 +88,7 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
     - Arguments: value
     - Returns: nothing
     - Adds a new node with that value to the head of the list with an O(1) Time performance.
-  - [ ] includes
+  - [x] includes
     - Arguments: value
     - Returns: Boolean
     - Indicates whether that value exists as a Node’s value somewhere within the list.

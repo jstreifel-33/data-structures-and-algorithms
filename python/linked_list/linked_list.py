@@ -31,3 +31,13 @@ class LinkedList:
             check_node = check_node.next
 
         return False
+
+    def to_string(self):
+        as_string = ""
+        check_node = self.head
+        while check_node is not None:
+            as_string += "{ " +  check_node.value + " } -> "
+            check_node = check_node.next
+
+        as_string += "None"
+        return as_string
