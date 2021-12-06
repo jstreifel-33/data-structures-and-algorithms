@@ -9,7 +9,7 @@ class Node:
 class LinkedList:
     """
     Initializes a singly linked list object, composed of nodes.
-    inlcudes 'insert', 'includes' and 'to_string' methods
+    includes 'insert', 'includes' and 'to_string' methods
     """
 
     def __init__(self):
