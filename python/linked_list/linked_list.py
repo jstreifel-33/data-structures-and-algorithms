@@ -45,7 +45,12 @@ class LinkedList:
     def insert_before(self, target, value):
         current_node = self.head
         while current_node.next.value != target:
-            print('stepping')
+            current_node = current_node.next
+        current_node.next = Node(value, current_node.next)
+
+    def insert_after(self, target, value):
+        current_node = self.head
+        while current_node.value != target:
             current_node = current_node.next
         current_node.next = Node(value, current_node.next)
 

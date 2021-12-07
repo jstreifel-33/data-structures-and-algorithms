@@ -72,11 +72,18 @@ def test_linked_list_insert_before_multiple(test_list):
     expected = '{ a } -> { d } -> { e } -> { b } -> { c } -> None'
     assert actual == expected
 
-@pytest.mark.skip('Pending')
+# @pytest.mark.skip('Pending')
 def test_linked_list_insert_after(test_list):
     test_list.insert_after('b', 'd')
     actual = test_list.to_string()
     expected = '{ a } -> { b } -> { d } -> { c } -> None'
+    assert actual == expected
+
+def test_linked_list_insert_after_multiple(test_list):
+    test_list.insert_after('b', 'd')
+    test_list.insert_after('b', 'e')
+    actual = test_list.to_string()
+    expected = '{ a } -> { b } -> { e } -> { d } -> { c } -> None'
     assert actual == expected
 
 @pytest.fixture
