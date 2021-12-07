@@ -48,6 +48,12 @@ def test_linked_list_append(test_list):
     expected = '{ a } -> { b } -> { c } -> { d } -> None'
     actual == expected
 
+def test_linked_list_append_multiple(test_list):
+    test_list.append('d')
+    test_list.append('e')
+    actual = test_list.to_string()
+    expected = '{ a } -> { b } -> { c } -> { d } -> { e } -> None'
+
 
 @pytest.fixture
 def test_list():
