@@ -1,4 +1,5 @@
 from linked_list.linked_list import LinkedList, Node
+import pytest
 
 
 def test_import():
@@ -40,3 +41,18 @@ def test_linked_list_includes():
     actual = meals.to_string()
     expected = "{ spam } -> { sandwich } -> None"
     assert actual == expected
+
+def test_linked_list_append(test_list):
+    test_list.append('d')
+    actual = test_list.to_string()
+    expected = '{ a } -> { b } -> { c } -> { d } -> None'
+    actual == expected
+
+
+@pytest.fixture
+def test_list():
+    work_list = LinkedList()
+    work_list.insert('c')
+    work_list.insert('b')
+    work_list.insert('a')
+    return work_list

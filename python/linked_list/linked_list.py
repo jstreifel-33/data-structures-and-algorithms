@@ -36,6 +36,12 @@ class LinkedList:
 
         return False
 
+    def append(self, value):
+        current_node = self.head
+        while current_node.next is not None:
+            current_node = current_node.next
+        current_node.next = Node(value)
+
     def to_string(self):
         """
         Returns string representation of
