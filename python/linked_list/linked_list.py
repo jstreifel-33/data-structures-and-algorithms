@@ -6,6 +6,7 @@ class Node:
         self.value = value
         self.next = next
 
+
 class LinkedList:
     """
     Initializes a singly linked list object, composed of nodes.
@@ -58,6 +59,23 @@ class LinkedList:
         while current_node.value != target:
             current_node = current_node.next
         current_node.next = Node(value, current_node.next)
+
+    def kth_value(self, k):
+        current_node = self.head
+        found_node = self.head
+        dist = 0
+
+        while current_node:
+            if dist > k:
+                found_node = found_node.next
+            current_node = current_node.next
+            dist += 1
+
+        if dist > k:
+            return found_node.value
+        else:
+            raise ValueError("Linked list too short for given value!")
+
 
     def to_string(self):
         """

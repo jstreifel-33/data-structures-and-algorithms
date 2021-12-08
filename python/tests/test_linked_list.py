@@ -79,6 +79,7 @@ def test_linked_list_insert_before_front(test_list):
     expected = '{ d } -> { a } -> { b } -> { c } -> None'
     assert actual == expected
 
+
 @pytest.mark.skip('pending')
 def test_linked_list_insert_before_no_match(test_list):
     test_list.insert_before('e', 'd')
@@ -101,6 +102,7 @@ def test_linked_list_insert_after_multiple(test_list):
     expected = '{ a } -> { b } -> { e } -> { d } -> { c } -> None'
     assert actual == expected
 
+
 def test_linked_list_insert_after_last(test_list):
     test_list.insert_after('c', 'd')
     actual = test_list.to_string()
@@ -108,9 +110,44 @@ def test_linked_list_insert_after_last(test_list):
     assert actual == expected
 
 
+def test_linked_list_kth_middle(test_list_kth):
+    actual = test_list_kth.kth_value(2)
+    expected = 'd'
+    assert actual == expected
+
+
+def test_linked_list_kth_end(test_list_kth):
+    actual = test_list_kth.kth_value(0)
+    expected = 'f'
+    assert actual == expected
+
+
+def test_linked_list_kth_start(test_list_kth):
+    actual = test_list_kth.kth_value(5)
+    expected = 'a'
+    assert actual == expected
+
+
+def test_linked_list_kth_too_far(test_list_kth):
+    with pytest.raises(ValueError):
+        test_list_kth.kth_value(6)
+
+
 @pytest.fixture
 def test_list():
     work_list = LinkedList()
+    work_list.insert('c')
+    work_list.insert('b')
+    work_list.insert('a')
+    return work_list
+
+
+@pytest.fixture
+def test_list_kth():
+    work_list = LinkedList()
+    work_list.insert('f')
+    work_list.insert('e')
+    work_list.insert('d')
     work_list.insert('c')
     work_list.insert('b')
     work_list.insert('a')
