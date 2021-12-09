@@ -11,4 +11,9 @@ def linked_list_zip(list_1, list_2):
         placeholder = node_list_2.next
         node_list_2.next = node_list_1
         node_list_2 = placeholder
+
+        if node_list_1.next is None:
+            node_list_1.next = node_list_2
+            return list_1
+
     return list_1

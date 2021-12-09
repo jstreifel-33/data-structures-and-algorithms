@@ -4,8 +4,20 @@ import pytest
 
 def test_linked_list_zip(zip_list_a, zip_list_1):
     result_list = linked_list_zip(zip_list_a, zip_list_1)
-    expected = result_list.to_string()
-    actual = '{ a } -> { 1 } -> { b } -> { 2 } -> { c } -> { 3 } -> None'
+    actual = result_list.to_string()
+    expected = '{ a } -> { 1 } -> { b } -> { 2 } -> { c } -> { 3 } -> None'
+    assert actual == expected
+
+def test_linked_list_zip_long_first(zip_list_long, zip_list_a):
+    result_list = linked_list_zip(zip_list_long, zip_list_a)
+    actual = result_list.to_string()
+    expected = '{ 1 } -> { a } -> { 2 } -> { b } -> { 3 } -> { c } -> { 4 } -> { 5 } -> None'
+    assert actual == expected
+
+def test_linked_list_zip_long_second(zip_list_long, zip_list_a):
+    result_list = linked_list_zip(zip_list_a, zip_list_long)
+    actual = result_list.to_string()
+    expected = '{ a } -> { 1 } -> { b } -> { 2 } -> { c } -> { 3 } -> { 4 } -> { 5 } -> None'
     assert actual == expected
 
 
@@ -28,9 +40,9 @@ def zip_list_1():
 @pytest.fixture
 def zip_list_long():
     linked_list = LinkedList()
-    linked_list.append('1')
-    linked_list.append('2')
-    linked_list.append('3')
-    linked_list.append('4')
-    linked_list.append('5')
+    linked_list.insert('5')
+    linked_list.insert('4')
+    linked_list.insert('3')
+    linked_list.insert('2')
+    linked_list.insert('1')
     return linked_list
