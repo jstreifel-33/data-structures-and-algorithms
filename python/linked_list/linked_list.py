@@ -36,6 +36,29 @@ class LinkedList:
 
         return False
 
+    def append(self, value):
+        current_node = self.head
+        while current_node.next is not None:
+            current_node = current_node.next
+        current_node.next = Node(value)
+
+    def insert_before(self, target, value):
+        current_node = self.head
+        #check head node, act accordingly if match for target.
+        if current_node.value == target:
+            self.insert(value)
+            return
+        #if head node not match, step through for match
+        while current_node.next.value != target:
+            current_node = current_node.next
+        current_node.next = Node(value, current_node.next)
+
+    def insert_after(self, target, value):
+        current_node = self.head
+        while current_node.value != target:
+            current_node = current_node.next
+        current_node.next = Node(value, current_node.next)
+
     def to_string(self):
         """
         Returns string representation of
