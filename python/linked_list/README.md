@@ -20,6 +20,7 @@ Efficiency of methods should be as follows:
 * `LinkedList.append` - O(N), complexity grows linearly with the size fo associated linked list, due to use of iterative traversal.
 * `LinkedList.insert_before` - O(N), complexity grows linearly with the size fo associated linked list, due to use of iterative traversal.
 * `LinkedList.insert_after` - O(N), complexity grows linearly with the size fo associated linked list, due to use of iterative traversal.
+* `LinkedList.kth_value` - O(N), complexity grows linearly with the size fo associated linked list, due to use of iterative traversal.
 
 ## API
 
@@ -31,7 +32,12 @@ Efficiency of methods should be as follows:
   * `LinkedList.append(value)` adds a value to the end of the linked list
   * `LinkedList.insert_before(target, value)` inserts a value to a linked list before a given target value
   * `LinkedList.insert_after(target, value)` inserts a value to a linked list after a given target value
+  * `LinkedList.kth_value(k)` returns the value k nodes away from the end of a linked list.
 
 ## Linked list insertions white board
 
 ![linked-list-insertions-wb](../images/linked_list_insertions.jpg)
+
+## Linked list kth white board
+
+![linked-list-kth-wb](../images/linked_list_kth.jpg)
