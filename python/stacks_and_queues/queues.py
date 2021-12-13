@@ -18,3 +18,6 @@ class Queue:
         self.front = self.front.next
         return front_val
 
+    def peek(self):
+        return self.front.value
+

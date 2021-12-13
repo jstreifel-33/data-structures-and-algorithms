@@ -19,7 +19,7 @@ def test_dequeue():
     expected = "apple"
     assert actual == expected
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_peek():
     q = Queue()
     q.enqueue("apple")
