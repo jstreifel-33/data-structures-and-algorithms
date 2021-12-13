@@ -6,15 +6,15 @@ class InvalidOperationError(Exception):
 class Queue:
     def __init__(self) -> None:
         self.front = None
-        self.end = None
+        self.back = None
 
     def enqueue(self, value):
         if self.front is None:
             self.front = Node(value)
-            self.end = self.front
+            self.back = self.front
         else:
-            self.end.next = Node(value)
-            self.end = self.end.next
+            self.back.next = Node(value)
+            self.back = self.back.next
 
     def dequeue(self):
         if self.front:
