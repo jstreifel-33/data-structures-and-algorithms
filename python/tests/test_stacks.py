@@ -28,7 +28,7 @@ def test_pop_single():
     expected = "apple"
     assert actual == expected
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_pop_some():
     s = Stack()
 
@@ -43,7 +43,7 @@ def test_pop_some():
 
     assert actual == expected
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_check_not_empty():
     s = Stack()
     s.push("apple")
@@ -52,7 +52,7 @@ def test_check_not_empty():
     expected = False
     assert actual == expected
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_pop_until_empty():
     s = Stack()
     s.push("apple")
