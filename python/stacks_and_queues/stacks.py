@@ -4,4 +4,8 @@ class InvalidOperationError(Exception):
     pass
 
 class Stack:
-    pass
+    def __init__(self) -> None:
+        self.top = None
+
+    def push(self, value):
+        self.top = Node(value, self.top)
