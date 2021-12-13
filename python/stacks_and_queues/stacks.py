@@ -11,12 +11,21 @@ class Stack:
         self.top = Node(value, self.top)
 
     def pop(self):
-        top_val = self.top.value
-        self.top = self.top.next
-        return top_val
+        if self.top:
+            top_val = self.top.value
+            self.top = self.top.next
+            return top_val
+
+        raise InvalidOperationError("Method not allowed on empty collection")
 
     def is_empty(self):
         if self.top is None:
             return True
 
         return False
+
+    def peek(self):
+        if self.top:
+            return self.top.value
+
+        raise InvalidOperationError("Method not allowed on empty collection")

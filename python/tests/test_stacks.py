@@ -65,7 +65,7 @@ def test_pop_until_empty():
     expected = True
     assert actual == expected
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_peek():
     s = Stack()
     s.push("apple")
@@ -74,7 +74,7 @@ def test_peek():
     expected = "banana"
     assert actual == expected
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_peek_empty():
     s = Stack()
     with pytest.raises(InvalidOperationError) as e:
@@ -82,7 +82,7 @@ def test_peek_empty():
 
     assert str(e.value) == "Method not allowed on empty collection"
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_pop_empty():
     s = Stack()
     with pytest.raises(InvalidOperationError) as e:
