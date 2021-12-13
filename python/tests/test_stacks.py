@@ -10,7 +10,7 @@ def test_push_onto_empty():
     expected = "apple"
     assert actual == expected
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_push_onto_full():
     s = Stack()
     s.push("apple")
@@ -20,7 +20,7 @@ def test_push_onto_full():
     expected = "cucumber"
     assert actual == expected
 
-@pytest.mark.skip('pending')
+# @pytest.mark.skip('pending')
 def test_pop_single():
     s = Stack()
     s.push("apple")

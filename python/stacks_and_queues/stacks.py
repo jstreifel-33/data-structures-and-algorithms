@@ -9,3 +9,8 @@ class Stack:
 
     def push(self, value):
         self.top = Node(value, self.top)
+
+    def pop(self):
+        top_val = self.top.value
+        self.top = self.top.next
+        return top_val
