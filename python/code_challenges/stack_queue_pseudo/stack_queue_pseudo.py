@@ -4,8 +4,8 @@ from stacks_and_queues.stacks import InvalidOperationError
 
 class PseudoQueue:
     def __init__(self) -> None:
-        exit = Stack()
-        entrance = Stack()
+        self.exit = Stack()
+        self.entrance = Stack()
 
     def enqueue(self, value):
         if self.entrance.is_empty():
@@ -23,4 +23,4 @@ class PseudoQueue:
             while not self.entrance.is_empty():
                 self.exit.push(self.entrance.pop())
 
-        return exit.pop()
+        return self.exit.pop()
