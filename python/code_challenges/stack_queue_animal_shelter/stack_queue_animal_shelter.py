@@ -28,7 +28,7 @@ class AnimalShelter:
 
     def dequeue(self, pref):
         searching = True
-        self.enqueue('end')
+        self.enqueue(Node('end'))
 
         while self.front.value != 'end':
             if str(self.front) == pref and searching:
@@ -36,7 +36,8 @@ class AnimalShelter:
                 searching = False
             else:
                 self.enqueue(self.front)
-                self.front = self.front.next
+
+            self.front = self.front.next
 
         self.front = self.front.next
 
