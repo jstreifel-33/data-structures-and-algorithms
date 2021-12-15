@@ -17,12 +17,12 @@ class AnimalShelter:
         self.end = None
 
 
-    def enqueue(self, value):
+    def enqueue(self, animal):
         if self.front is None:
-            self.front = Node(value)
+            self.front = animal
             self.end = self.front
         else:
-            self.end.next = Node(value)
+            self.end.next = animal
             self.end = self.end.next
 
 
@@ -31,11 +31,11 @@ class AnimalShelter:
         self.enqueue('end')
 
         while self.front.value != 'end':
-            if str(self.front.value) == pref and searching:
-                found_animal = self.front.value
+            if str(self.front) == pref and searching:
+                found_animal = self.front
                 searching = False
             else:
-                self.enqueue(self.front.value)
+                self.enqueue(self.front)
                 self.front = self.front.next
 
         self.front = self.front.next
