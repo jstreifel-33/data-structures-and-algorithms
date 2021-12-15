@@ -30,6 +30,20 @@ def test_preservation_of_queue(shelter_of_pets):
     assert animal.value == 'Tom'
 
 
+def test_no_match_result(shelter_of_pets):
+    animal = shelter_of_pets.dequeue('lizard')
+
+    assert animal is None
+
+
+def test_animal_shelter_empty():
+    shelter = AnimalShelter()
+    with pytest.raises(Exception) as e:
+        shelter.dequeue('cat')
+
+    assert str(e.value) == 'Animal Shelter is empty!'
+
+
 @pytest.fixture
 def shelter_of_pets():
     shelter = AnimalShelter()

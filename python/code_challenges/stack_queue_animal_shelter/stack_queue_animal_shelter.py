@@ -27,6 +27,9 @@ class AnimalShelter:
 
 
     def dequeue(self, pref):
+        if self.end is None and self.front is None:
+            raise Exception('Animal Shelter is empty!')
+
         searching = True
         self.enqueue(Node('end'))
 
