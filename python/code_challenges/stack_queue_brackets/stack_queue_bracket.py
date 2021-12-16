@@ -15,4 +15,8 @@ def validate_brackets(test_str):
                     return False
             except:
                 return False
-    return True
+
+    if brackets.is_empty():
+        return True
+    else:
+        return False
