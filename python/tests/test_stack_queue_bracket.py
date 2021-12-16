@@ -14,3 +14,20 @@ def test_failing_string():
     assert actual == expected
 
 
+def test_passing_string_with_characters():
+    actual = validate_brackets("(potato){{cucumber[pear]}}")
+    expected = True
+    assert actual == expected
+
+
+def test_failing_string_with_characters():
+    actual = validate_brackets("(cat{{hamster[}}])")
+    expected = False
+    assert actual == expected
+
+
+def test_first_bracket_close():
+    actual = validate_brackets(")[]()")
+    expected = False
+    assert actual == expected
+

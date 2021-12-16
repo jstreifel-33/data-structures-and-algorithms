@@ -10,6 +10,9 @@ def validate_brackets(test_str):
         elif char == "{":
             brackets.push("}")
         elif char == ")" or char =="]" or char == "}":
-            if not char == brackets.pop():
+            try:
+                if not char == brackets.pop():
+                    return False
+            except:
                 return False
     return True
