@@ -60,6 +60,7 @@ class BinaryTree():
 
 class BinarySearchTree(BinaryTree):
     def add(self, value):
+
         def _traverse_and_add(root, value):
             if value < root.value:
                 if root.left:
@@ -77,5 +78,19 @@ class BinarySearchTree(BinaryTree):
         else:
             _traverse_and_add(self.root, value)
 
-    def contains(self, value):
-        pass
+
+    def contains(self, query):
+
+        def _traversal_compare(root, query):
+            if root.value == query:
+                return True
+            if root.left and _traversal_compare(root.left, query):
+                return True
+            if root.right and _traversal_compare(root.right, query):
+                return True
+            return False
+
+        if self.root:
+            return _traversal_compare(self.root, query)
+        else:
+            return False
