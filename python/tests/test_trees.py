@@ -44,6 +44,8 @@ def test_tree_postorder(simple_tree):
     expected = ["eggs", "hash", "spam"]
     assert actual == expected
 
+
+# Fixtures
 @pytest.fixture
 def simple_tree():
     tree = BinaryTree()
