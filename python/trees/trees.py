@@ -77,7 +77,10 @@ class BinaryTree():
 
             return max_value
 
-        return _traversal_max(self.root)
+        if self.root:
+            return _traversal_max(self.root)
+        else:
+            raise ValueError("Cannot perform operation on empty tree!")
 
 class BinarySearchTree(BinaryTree):
     def add(self, value):
