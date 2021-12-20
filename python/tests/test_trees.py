@@ -44,6 +44,38 @@ def test_tree_postorder(simple_tree):
     expected = ["eggs", "hash", "spam"]
     assert actual == expected
 
+def test_BST_instance():
+    bst = BinarySearchTree()
+    assert isinstance(bst, BinaryTree)
+
+def test_BST_add():
+    bst = BinarySearchTree()
+    #add root
+    bst.add(25)
+    #add level 1
+    bst.add(20)
+    bst.add(30)
+    actual = bst.in_order_traverse()
+    expected = [20, 25, 30]
+    assert actual == expected
+
+def test_BST_add_height_2():
+    bst = BinarySearchTree()
+    #add root
+    bst.add(25)
+    #add level 1
+    bst.add(20)
+    bst.add(30)
+    #add level 2
+    bst.add(15)
+    bst.add(23)
+    bst.add(39)
+    bst.add(27)
+    #test
+    actual = bst.in_order_traverse()
+    expected = [15, 20, 23, 25, 27, 30, 39]
+    assert actual == expected
+
 
 # Fixtures
 @pytest.fixture
