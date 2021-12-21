@@ -18,6 +18,8 @@ Efficiency of methods is as follows:
   * `pre_order_traverse` - O(h) time complexity where h is the height of the tree. O(N) space complexity, where N is the number of nodes within the tree.
   * `in_order_traverse` - O(h) time complexity where h is the height of the tree. O(N) space complexity, where N is the number of nodes within the tree.
   * `post_order_traverse` - O(h) time complexity where h is the height of the tree. O(N) space complexity, where N is the number of nodes within the tree.
+  * `.get_max_value()` - O(h) time complexity where h is the height of the tree. O(1) space complexity, since values do not scale with size of tree or input.
+
 * Binary Search Tree methods:
   * `add(value)` - O(logN) time complexity, where N is number of nodes within tree. O(1) space complexity, only one additional object created.
   * `contains(value)` - O(logN) time complexity, where N is number of nodes within tree. O(1) space complexity, no additional assignments used.
@@ -30,6 +32,7 @@ Efficiency of methods is as follows:
   * `.pre_order_traverse()` - returns an array of values from tree arranged pre-order (root -> left -> right). Raises exception when executed on empty tree.
   * `.in_order_traverse()` - returns an array of values from tree arranged in-order (left -> root -> right). Raises exception when executed on empty tree.
   * `.post_order_traverse()` - returns an array of values from tree arranged post-order (left -> right -> root). Raises exception when executed on empty tree.
+  * `.get_max_value()` - searches through a tree and returns the maximum value found. Raises exception when executed on empty tree.
 
 ### Binary Search Tree
 
