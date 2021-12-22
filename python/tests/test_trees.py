@@ -1,6 +1,4 @@
 from trees.trees import BinaryTree, BinarySearchTree, Node
-import pytest
-
 
 # Feature Tests:
 
@@ -59,41 +57,24 @@ def test_BST_add():
     expected = [20, 25, 30]
     assert actual == expected
 
+
 def test_BST_add_height_2(bst_large):
     actual = bst_large.in_order_traverse()
     expected = [15, 20, 23, 25, 27, 30, 39]
     assert actual == expected
 
+
 def test_BST_contains_25(bst_large):
     assert bst_large.contains(25)
+
 
 def test_BST_contains_25(bst_large):
     assert bst_large.contains(15)
 
+
 def test_BST_contains_25(bst_large):
     assert bst_large.contains(30)
 
+
 def test_BST_not_contains_47(bst_large):
     assert bst_large.contains(47) is False
-
-# Fixtures
-@pytest.fixture
-def simple_tree():
-    tree = BinaryTree()
-    tree.root = Node("spam", left=Node("eggs"), right=Node("hash"))
-    return tree
-
-@pytest.fixture
-def bst_large():
-    bst = BinarySearchTree()
-    #add root
-    bst.add(25)
-    #add level 1
-    bst.add(20)
-    bst.add(30)
-    #add level 2
-    bst.add(15)
-    bst.add(23)
-    bst.add(39)
-    bst.add(27)
-    return bst
