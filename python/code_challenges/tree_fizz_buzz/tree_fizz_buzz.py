@@ -3,9 +3,32 @@ class KNode():
         self.value = value
         self.children = []
 
-class k_ary_tree():
+class KAryTree():
     def __init__(self):
         self.root = None
 
 def fizz_buzz_tree(tree):
-    pass
+    output_tree = KAryTree
+
+    def fizz_buzz_traversal(root):
+
+        if root.value % 3 == 0 and root.value % 5 == 0:
+            new_node = KNode('fizzbuzz')
+        elif root.value % 3 == 0:
+            new_node = KNode('fizz')
+        elif root.value % 5 == 0:
+            new_node = KNode('buzz')
+        elif root:
+            new_node = KNode(str(root.value))
+        else:
+            return None
+
+        new_node.children = [fizz_buzz_traversal(child) for child in root.children]
+
+        return new_node
+
+    output_tree.root = fizz_buzz_traversal(tree.root)
+
+    return output_tree
+
+
