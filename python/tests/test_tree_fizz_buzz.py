@@ -5,7 +5,7 @@ def test_tree_fizz_buzz_small(small_k_ary):
     output_tree = fizz_buzz_tree(small_k_ary)
     assert output_tree.root.value == '7'
     val_children = [child.value for child in output_tree.root.children]
-    assert val_children == ['fizz', 'fizzbuzz', 'buzz']
+    assert val_children == ['Fizz', 'FizzBuzz', 'Buzz']
 
 def test_tree_fizz_buzz_empty():
     tree = KAryTree()
