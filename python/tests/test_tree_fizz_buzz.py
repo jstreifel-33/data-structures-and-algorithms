@@ -7,6 +7,10 @@ def test_tree_fizz_buzz_small(small_k_ary):
     val_children = [child.value for child in output_tree.root.children]
     assert val_children == ['fizz', 'fizzbuzz', 'buzz']
 
+def test_tree_fizz_buzz_empty():
+    tree = KAryTree()
+    result = fizz_buzz_tree(tree)
+    assert result.root is None
 
 @pytest.fixture
 def small_k_ary():
