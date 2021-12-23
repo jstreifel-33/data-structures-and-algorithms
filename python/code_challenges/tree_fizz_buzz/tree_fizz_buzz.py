@@ -13,11 +13,11 @@ def fizz_buzz_tree(tree):
     def fizz_buzz_traversal(root):
 
         if root.value % 3 == 0 and root.value % 5 == 0:
-            new_node = KNode('fizzbuzz')
+            new_node = KNode('FizzBuzz')
         elif root.value % 3 == 0:
-            new_node = KNode('fizz')
+            new_node = KNode('Fizz')
         elif root.value % 5 == 0:
-            new_node = KNode('buzz')
+            new_node = KNode('Buzz')
         else:
             new_node = KNode(str(root.value))
 
