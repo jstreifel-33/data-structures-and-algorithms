@@ -1,0 +1,1 @@
+from code_challenges.insertion_sort.insertion_sort import insertion_sort
