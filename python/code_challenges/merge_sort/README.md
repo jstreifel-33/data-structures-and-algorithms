@@ -1,0 +1,5 @@
+# Merge Sort
+
+An exploration of the merge sort algorithm.
+
+For a step-by-step breakdown, please refer to the associated [blog post](./BLOG.md)
