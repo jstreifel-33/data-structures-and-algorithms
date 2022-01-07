@@ -1,31 +1,35 @@
-def merge_sort(unsorted_list):
-    n = len(unsorted_list)
+def merge_sort(num_list):
+    n = len(num_list)
 
     if n > 1:
         mid = n//2
-        left = unsorted_list[:mid]
-        right = unsorted_list[mid:]
+        left = num_list[0:mid]
+        right = num_list[mid:n]
 
         merge_sort(left)
         merge_sort(right)
-        merge(left, right, unsorted_list)
+        merge(left, right, num_list)
 
-def merge(left, right, unsorted_list):
+def merge(left, right, num_list):
     i = 0
     j = 0
     k = 0
 
     while i < len(left) and j < len(right):
-        if left[i] <= right[i]:
-            unsorted_list[k] = left[i]
+        if left[i] <= right[j]:
+            num_list[k] = left[i]
             i += 1
         else:
-            unsorted_list[k] = right[j]
+            num_list[k] = right[j]
             j += 1
-
         k += 1
 
     if i == len(left):
-        unsorted_list = unsorted_list + right
+        for pos in range(k, len(num_list)):
+            num_list[pos] = right[j]
+            j+=1
     else:
-        unsorted_list = unsorted_list + left
+        for pos in range(k, len(num_list)):
+            num_list[pos] = left[i]
+            i+=1
+
