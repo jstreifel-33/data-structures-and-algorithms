@@ -1,5 +1,9 @@
 # Algorithm: Quick Sort
 
+Quick sort is yet another sorting algorithm, that gives merge sort a run for it's money. It uses pivot points within a given list to divide and conquer a list.
+
+As always, let's start by taking a look at some pseudocode:
+
 ```pseudo
 ALGORITHM QuickSort(arr, left, right)
     if left < right
@@ -31,4 +35,16 @@ ALGORITHM Swap(arr, i, low)
     temp <-- arr[i]
     arr[i] <-- arr[low]
     arr[low] <-- temp
-    ```
+```
+
+Make sense? No? Great! Let's break it down.
+
+## The Breakdown
+
+The quick sort algorithm is started by invoking quick_sort(list). In our version, we've set left and right to the first and last values in a list on the first pass.
+
+Next we use partition to grab a pivot value (right value in list) and make repeated comparisons to find where within the list values the pivot value belongs. Other values are placed to either left or right of the pivot. With each pivot swap, we increment low by 1 and use the swap() function to make a quick shuffle of values. After checking each value in the list, we return whatever the value of low is +1. This value is used in our recursion cases, which bloom outward from the low value.
+
+Recursion is used to call quick_sort to the left and right of the pivot value, cascading outward until the list is fully sorted.
+
+Hopefully that helps *sort* things out!

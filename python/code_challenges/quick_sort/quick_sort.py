@@ -4,9 +4,7 @@ def quick_sort(li, left=None, right=None):
     if right is None:
         right = len(li)-1
     if left < right:
-        print(left, right)
         pos = partition(li, left, right)
-        print(pos)
         quick_sort(li, left, pos - 1)
         quick_sort(li, pos + 1, right)
 
