@@ -8,8 +8,16 @@ def test_hash_table_add():
 
     assert ht.table[hash].head.value == ("cat", "meow")
 
+
 def test_hash_table_get():
     ht = HashTable()
     ht.add("cat", "meow")
 
     assert ht.get("cat") == "meow"
+
+
+def test_get_key_not_in_table():
+    ht = HashTable()
+    ht.add("cat", "meow")
+
+    assert ht.get("dog") is None

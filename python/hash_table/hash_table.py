@@ -26,14 +26,22 @@ class HashTable:
                     return node_val
                 node = node.next
 
-        raise KeyError("Key not found in bucket!")
+        return None
 
     def contains(self, key):
-        try:
-            self.get(key)
-            return True
-        except KeyError:
-            return False
+        hash = self.hash(key)
+
+        bucket = self.table[hash]
+
+        if bucket:
+            node = bucket.head
+            while node:
+                node_key = node.value[0]
+                if node_key == key:
+                    return True
+                node = node.next
+
+        return False
 
     def hash(self, key):
         summed = sum([ord(char) for char in key])
