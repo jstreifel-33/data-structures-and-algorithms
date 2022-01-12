@@ -11,8 +11,7 @@ class HashTable:
         if self.table[hash] is None:
             self.table[hash] = LinkedList()
 
-        self.table[hash].append(info)
-
+        self.table[hash].insert(info)
 
     def get(self, key):
         hash = self.hash(key)
@@ -29,7 +28,6 @@ class HashTable:
 
         raise KeyError("Key not found in bucket!")
 
-
     def contains(self, key):
         try:
             self.get(key)
@@ -38,7 +36,7 @@ class HashTable:
             return False
 
     def hash(self, key):
-        summed = sum([ord(char) for char in key.split()])
+        summed = sum([ord(char) for char in key])
         prod = summed * 599
         hash = prod % len(self.table)
         return hash
