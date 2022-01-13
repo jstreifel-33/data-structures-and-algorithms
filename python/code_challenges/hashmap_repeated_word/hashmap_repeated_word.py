@@ -18,7 +18,7 @@ def find_first_repeat(sample):
         if ht.contains(word):
             return word
         else:
-            ht.add((word, word))
+            ht.add(word, word)
 
     # return default message if no repetition found
     return "No repeated strings found!"
