@@ -3,7 +3,6 @@ from code_challenges.hashmap_repeated_word.hashmap_repeated_word import find_fir
 
 #Test provided examples
 
-
 def test_basic_example():
     sample = "Once upon a time, there was a brave princess who..."
 
@@ -27,3 +26,12 @@ def test_punctuation_example():
 
     assert result == "summer"
 
+
+# Custom tests
+
+def test_no_repeat():
+    sample = "Mary had a little lamb"
+
+    result = find_first_repeat(sample)
+
+    assert result == "No repeated strings found!"
