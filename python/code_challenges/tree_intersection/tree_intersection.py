@@ -5,19 +5,19 @@ def tree_intersection(tree_1, tree_2):
     intersections = set()
 
     def ht_traversal(root, ht):
-        ht.add(root.value)
+        ht.add(str(root.value), None)
         if root.left:
             ht_traversal(root.left, ht)
         if root.right:
             ht_traversal(root.right, ht)
 
     def intersection_traversal(root, ht, intersections):
-        if ht.contains(root.value):
-            intersections.add()
+        if ht.contains(str(root.value)):
+            intersections.add(root.value)
         if root.left:
-            ht_traversal(root.left, ht, intersections)
+            intersection_traversal(root.left, ht, intersections)
         if root.right:
-            ht_traversal(root.right, ht, intersections)
+            intersection_traversal(root.right, ht, intersections)
 
         return intersections
 
