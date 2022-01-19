@@ -14,6 +14,9 @@ class Graph():
         return list(self.adjacency_list.keys())
 
     def add_edge(self, start_vert, end_vert, weight=0):
+        if end_vert not in self.adjacency_list.keys():
+            raise KeyError("End vertex not in graph")
+
         edge = Edge(end_vert, weight)
         self.adjacency_list[start_vert].append(edge)
 
