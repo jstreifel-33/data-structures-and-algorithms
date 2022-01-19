@@ -28,8 +28,14 @@ class Vertex():
     def __init__(self, value):
         self.value = value
 
+    def __repr__(self):
+        return str(self.value)
+
 
 class Edge():
     def __init__(self, vertex, weight=0):
             self.vertex = vertex
             self.weight = weight
+
+    def __repr__(self):
+        return f"({self.vertex}, {self.weight})"
