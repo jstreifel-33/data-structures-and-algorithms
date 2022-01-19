@@ -16,7 +16,7 @@ def test_add_node():
     assert actual == expected
 
 
-@pytest.mark.skip("pending")
+# @pytest.mark.skip("pending")
 def test_size_empty():
 
     graph = Graph()

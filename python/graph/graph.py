@@ -7,6 +7,8 @@ class Graph():
         self.adjacency_list[vertex] = []
         return vertex
 
+    def size(self):
+        return len(self.adjacency_list)
 
 class Vertex():
     def __init__(self, value):
