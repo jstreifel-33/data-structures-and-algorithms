@@ -17,6 +17,9 @@ class Graph():
         edge = Edge(end_vert, weight)
         self.adjacency_list[start_vert].append(edge)
 
+    def get_neighbors(self, vertex):
+        return self.adjacency_list[vertex]
+
 
 class Vertex():
     def __init__(self, value):
@@ -24,6 +27,6 @@ class Vertex():
 
 
 class Edge():
-    def __init__(self, end_vert, weight=0):
-            self.end_vert = end_vert
+    def __init__(self, vertex, weight=0):
+            self.vertex = vertex
             self.weight = weight
