@@ -72,7 +72,7 @@ def test_get_nodes():
     assert actual == expected
 
 
-@pytest.mark.skip("pending")
+# @pytest.mark.skip("pending")
 def test_add_edge_simple():
     g = Graph()
     apple = g.add_node("apple")
