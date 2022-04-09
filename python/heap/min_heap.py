@@ -62,10 +62,10 @@ class min_heap_list:
             break
 
     # peek, add and remove values
-    def heap_peek(self):
+    def peek(self):
         return self.h[0]
 
-    def heap_pop(self):
+    def pop(self):
         min_val = self.h[0]
 
         self.h[0] = self.h.pop()
@@ -73,6 +73,6 @@ class min_heap_list:
 
         return min_val
 
-    def heap_add(self, val):
+    def add(self, val):
         self.h += [val]
         self.heapify_up()
