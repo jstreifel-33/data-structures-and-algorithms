@@ -56,8 +56,8 @@ class min_heap_list:
         while self._has_left_child(idx):
             child = self._get_left_child(idx)
 
-            if self._has_right_child:
-                right = self._get_right_child
+            if self._has_right_child(idx):
+                right = self._get_right_child(idx)
                 if self.h[right] < self.h[child]:
                     child = right
 
@@ -73,9 +73,11 @@ class min_heap_list:
 
     def pop(self):
         min_val = self.h[0]
+        end = self.h.pop()
 
-        self.h[0] = self.h.pop()
-        self._heapify_down()
+        if len(self.h) > 0:
+            self.h[0] = end
+            self._heapify_down()
 
         return min_val
 
