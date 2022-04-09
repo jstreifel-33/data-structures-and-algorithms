@@ -34,7 +34,7 @@ class min_heap_list:
     def swap(self, idx, idx_2):
         self.h[idx], self.h[idx_2] = self.h[idx_2], self.h[idx]
 
-    # maintain heap structure
+    # maintain min-heap structure
     def heapify_up(self):
         idx = len(self.h) - 1
         while self.has_parent(idx):
@@ -61,8 +61,18 @@ class min_heap_list:
                 continue
             break
 
-    def heap_pop():
-        pass
+    # peek, add and remove values
+    def heap_peek(self):
+        return self.h[0]
 
-    def heap_add():
-        pass
+    def heap_pop(self):
+        min_val = self.h[0]
+
+        self.h[0] = self.h.pop()
+        self.heapify_down()
+
+        return min_val
+
+    def heap_add(self, val):
+        self.h += [val]
+        self.heapify_up()
