@@ -22,7 +22,7 @@ class min_heap_list:
 
     # check for parent, children
     def has_parent(self, idx):
-        return self.get_parent(idx) > 0
+        return self.get_parent(idx) >= 0
 
     def has_left_child(self, idx):
         return self.get_left_child(idx) < len(self.h)
@@ -44,3 +44,25 @@ class min_heap_list:
                 idx = parent
                 continue
             break
+
+    def heapify_down(self):
+        idx = 0
+        while self.has_left_child(idx):
+            child = self.get_left_child(idx)
+
+            if self.has_right_child:
+                right = self.get_right_child
+                if self.h[right] < self.h[child]:
+                    child = right
+
+            if self.h[child] < self.h[idx]:
+                self.swap(idx, child)
+                idx = child
+                continue
+            break
+
+    def heap_pop():
+        pass
+
+    def heap_add():
+        pass
